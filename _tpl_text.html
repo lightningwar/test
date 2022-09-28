@@ -1,0 +1,60 @@
+{@each linkin as it,index}
+<div class="accordion-item">
+  <div class="accordion-item-header"># ${index | add} & ${it.match_rate}</div>
+  <div class="accordion-item-body">
+    <div class="accordion-item-body-content">
+      <!-- 个人信息 -->
+      <div class="userInfo">
+        <img src="${it.profile.avatar}" alt="">
+      <table>
+       <tbody>
+        <tr><td>${it.profile.name}</td></tr>
+        <tr><td>match rate:</td><td>${it.match_rate}</td> </tr>
+        <tr><td>url:</td><td><a href="${it.url}">${it.url}</a></td></tr>
+        <tr><td>pdf url:</td><td><a href="${it.pdf_url}">${it.pdf_url}</a></td></tr>
+        <tr><td>bio:</td><td>${it.profile.bio}</td></tr>
+        <tr><td>country:</td><td>${it.profile.country}</td></tr>
+        <tr><td>region:</td><td>${it.profile.region}</td></tr>
+       </tbody>
+      </table>
+      </div>
+      <!-- 工作经历 -->
+      <div class="experience">
+        <div class="title">Experience</div>
+        {@each it.experience as it2,index}
+        <div class="one info">
+          <img src="${it2.avatar}" alt="">
+          <table>
+            <tbody>
+              <tr><td>${it2.name}</td></tr>
+              <tr><td>time:</td> <td>${it2.time}</td></tr>
+              <tr><td>position:</td> <td>${it2.position}</td></tr>
+              <tr><td>country:</td> <td>${it2.country}</td></tr>
+              <tr><td>region:</td> <td>${it2.region}</td></tr>
+             </tbody>
+          </table>
+        </div>
+        {@/each}
+    </div>
+    
+    <!-- 教育经历 -->
+    <div class="education">
+      <div class="title">Education</div>
+      {@each it.education as it3,index}
+      <div class="one info">
+        <img src="${it3.avatar}" alt="">
+        <table>
+          <tbody>
+            <tr><td>${it3.name}</td></tr>
+            <tr><td>time:</td> <td>${it3.time}</td></tr>
+            <tr><td>qualification:</td> <td>${it3.qualification}</td></tr>
+            <tr><td>major:</td> <td>${it3.major}</td></tr>
+           </tbody>
+        </table>
+      </div>
+      {@/each}
+    </div>
+  </div>
+  </div>
+</div>
+{@/each}
